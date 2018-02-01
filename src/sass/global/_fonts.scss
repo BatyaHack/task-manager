@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "Oswald-Bold";
+  font-style: normal;
+  font-weight: normal;
+
+  src: local("Oswald-Bold"), local("Oswald-Bold"), url("../fonts/Oswald-Bold.woff") format("woff"),
+  url("../fonts/Oswald-Bold.woff2") format("woff2");
+  // можно было бы указать стандартный шрифт.
+}
+
+@font-face {
+  font-family: "Oswald-Regular";
+  font-style: normal;
+  font-weight: normal;
+
+  src: local("Oswald-Regular"), local("Oswald-Regular"), url("../fonts/Oswald-Regular.ttf") format("ttf"),
+  url("../fonts/Oswald-Regular.woff2") format("woff2");;
+}
+

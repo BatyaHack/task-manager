@@ -1,0 +1,23 @@
+.label {
+  position: relative;
+  cursor: pointer;
+
+  &__title {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    display: block;
+    width: 100%;
+    color: $text-secondary-color;
+    will-change: contents;
+    transition: 0.2s all;
+  }
+
+  &__input {
+    &:focus + .label__title,
+    &:valid + .label__title {
+      top: -25px;
+      opacity: 0.8;
+    }
+  }
+}

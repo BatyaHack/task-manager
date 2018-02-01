@@ -1,0 +1,8 @@
+.top-bar {
+  background: $background-sad-color;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,27 @@
+.input {
+  width: 100%;
+  background: none;
+  &:focus {
+    outline: none;
+  }
+
+  &--primary {
+    font-size: 20px;
+    border: none;
+    border-bottom: 1px solid $border-primary-color;
+    color: $text-secondary-color;
+  }
+
+  &--textarea {
+    height: 25px;
+    resize: none;
+    overflow: hidden;
+    transition: 0.3s all;
+    // тут проскакивает скрол. Найти как исправить :с
+    &:focus,
+    &:valid {
+      height: 100px;
+      overflow: auto;
+    }
+  }
+}
