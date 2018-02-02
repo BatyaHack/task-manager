@@ -10,55 +10,105 @@
 </head>
 <body>
 <div class="global-wrapper">
-    <header class="top-bar">
-        <div class="container  top-bar__container">
-
-            <section class="logo  top-bar__logo">
-                <div class="logo__wrapper">
-                    <a class="logo__link" href="#">
-                        <img class="logo__img" src="./img/logo.png" alt="logo-img">
-                    </a>
-                </div>
-                <h1 class="logo__seo-title" hidden>такс менеджер</h1>
-            </section>
-
-            <nav class="navigation  top-bar__navigation">
-
-                <ul class="navigation__list">
-                    <li class="navigation__elem">
-                        <a class="navigation__link" href="#">Добавить пользователя</a>
-                    </li>
-                    <li class="navigation__elem">
-                        <a class="navigation__link" href="#">Пункт 1</a>
-                    </li>
-                    <li class="navigation__elem">
-                        <a class="navigation__link" href="#">Пункт 2</a>
-                    </li>
-                </ul>
-
-                <ul class="navigation__list  navigation__list--mobile">
-                    <li class="navigation__elem">
-                        <a class="navigation__link" href="#">Добавить пользователя</a>
-                    </li>
-                    <li class="navigation__elem">
-                        <a class="navigation__link" href="#">Пункт 1</a>
-                    </li>
-                    <li class="navigation__elem">
-                        <a class="navigation__link" href="#">Пункт 2</a>
-                    </li>
-                </ul>
-
-                <div class="navigation__burger">
-                    <span class="navigation__line"></span>
-                </div>
-
-            </nav>
-
-        </div>
-    </header>
+    @@include('./htmlBlocks/top-bar.html')
     <main class="content-block">
         <div class="container  content-block__container">
             <div class="row  content-block__row">
+                <article class="card-task  content-block__card-task">
+                    <header class="card-task__header">
+                        <div class="card-task__wrapper-img">
+                            <img class="card-task__img" src="./img/panda.jpg" alt="card-task-img">
+                            <div class="card-task__controls">
+                                <a class="card-task__control  card-task__control--edit" href="#"></a>
+                                <a class="card-task__control  card-task__control--delete" href="#"></a>
+                            </div>
+                        </div>
+                        <h2 class="card-task__title">купить хлеб</h2>
+                    </header>
+                    <div class="card-task__content">
+                        <p class="card-task__description">Выйти и купить хлеб</p>
+                        <time class="card-task__time  card-task__time">22.11.2017</time>
+                    </div>
+                    <footer class="card-task__footer">
+                        <a class="btn  btn--secondary  card-task__btn" href="#">просмотреть</a>
+                    </footer>
+                </article>
+                <article class="card-task  content-block__card-task">
+                    <header class="card-task__header">
+                        <div class="card-task__wrapper-img">
+                            <img class="card-task__img" src="./img/panda.jpg" alt="card-task-img">
+                            <div class="card-task__controls">
+                                <a class="card-task__control  card-task__control--edit" href="#"></a>
+                                <a class="card-task__control  card-task__control--delete" href="#"></a>
+                            </div>
+                        </div>
+                        <h2 class="card-task__title">купить хлеб</h2>
+                    </header>
+                    <div class="card-task__content">
+                        <p class="card-task__description">Выйти и купить хлеб</p>
+                        <time class="card-task__time  card-task__time">22.11.2017</time>
+                    </div>
+                    <footer class="card-task__footer">
+                        <a class="btn  btn--secondary  card-task__btn" href="#">просмотреть</a>
+                    </footer>
+                </article>
+                <article class="card-task  content-block__card-task">
+                    <header class="card-task__header">
+                        <div class="card-task__wrapper-img">
+                            <img class="card-task__img" src="./img/panda.jpg" alt="card-task-img">
+                            <div class="card-task__controls">
+                                <a class="card-task__control  card-task__control--edit" href="#"></a>
+                                <a class="card-task__control  card-task__control--delete" href="#"></a>
+                            </div>
+                        </div>
+                        <h2 class="card-task__title">купить хлеб</h2>
+                    </header>
+                    <div class="card-task__content">
+                        <p class="card-task__description">Выйти и купить хлеб</p>
+                        <time class="card-task__time  card-task__time">22.11.2017</time>
+                    </div>
+                    <footer class="card-task__footer">
+                        <a class="btn  btn--secondary  card-task__btn" href="#">просмотреть</a>
+                    </footer>
+                </article>
+                <article class="card-task  content-block__card-task">
+                    <header class="card-task__header">
+                        <div class="card-task__wrapper-img">
+                            <img class="card-task__img" src="./img/panda.jpg" alt="card-task-img">
+                            <div class="card-task__controls">
+                                <a class="card-task__control  card-task__control--edit" href="#"></a>
+                                <a class="card-task__control  card-task__control--delete" href="#"></a>
+                            </div>
+                        </div>
+                        <h2 class="card-task__title">купить хлеб</h2>
+                    </header>
+                    <div class="card-task__content">
+                        <p class="card-task__description">Выйти и купить хлеб</p>
+                        <time class="card-task__time  card-task__time">22.11.2017</time>
+                    </div>
+                    <footer class="card-task__footer">
+                        <a class="btn  btn--secondary  card-task__btn" href="#">просмотреть</a>
+                    </footer>
+                </article>
+                <article class="card-task  content-block__card-task">
+                    <header class="card-task__header">
+                        <div class="card-task__wrapper-img">
+                            <img class="card-task__img" src="./img/panda.jpg" alt="card-task-img">
+                            <div class="card-task__controls">
+                                <a class="card-task__control  card-task__control--edit" href="#"></a>
+                                <a class="card-task__control  card-task__control--delete" href="#"></a>
+                            </div>
+                        </div>
+                        <h2 class="card-task__title">купить хлеб</h2>
+                    </header>
+                    <div class="card-task__content">
+                        <p class="card-task__description">Выйти и купить хлеб</p>
+                        <time class="card-task__time  card-task__time">22.11.2017</time>
+                    </div>
+                    <footer class="card-task__footer">
+                        <a class="btn  btn--secondary  card-task__btn" href="#">просмотреть</a>
+                    </footer>
+                </article>
                 <article class="card-task  content-block__card-task">
                     <header class="card-task__header">
                         <div class="card-task__wrapper-img">
