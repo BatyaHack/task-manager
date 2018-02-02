@@ -1,0 +1,13 @@
+.logo {
+
+  &__img-wrapper {
+    display: block;
+    text-align: center;
+  }
+
+  &__img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+  }
+}

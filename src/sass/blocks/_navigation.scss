@@ -1,0 +1,115 @@
+.navigation {
+  display: flex;
+  min-height: 100%;
+
+  &__list,
+  &__link,
+  &__elem {
+    min-height: 100%;
+  }
+
+  &__list {
+    display: none;
+
+    &--open {
+      height: auto !important;
+    }
+
+    &--mobile {
+      display: flex;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 0;
+      min-height: 0;
+      overflow: hidden;
+      z-index: 1090;
+      background: $background-sad-color;
+      transition: 0.3s all;
+
+      .navigation__elem {
+        width: 100%;
+        min-height: 0;
+      }
+
+      .navigation__link {
+        display: block;
+        padding: 20px 0;
+        text-align: center;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+  }
+
+  &__elem {
+    display: block;
+  }
+
+
+  &__burger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    margin: auto 0;
+    border: 2px solid $background-secondary-color;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  &__line {
+    position: relative;
+    width: 40px;
+    height: 2px;
+    display: block;
+    background: $background-secondary-color;
+
+    &:after,
+    &:before {
+      @include set-pseudo(100%, 2px, $background-secondary-color);
+    }
+
+    &:after {
+      top: 15px
+    }
+
+    &:before {
+      top: -15px
+    }
+  }
+
+  &__link {
+    padding: 0 10px;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $text-secondary-color;
+
+    &:hover,
+    &--active {
+      background: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+@media (min-width: $mobile) {
+  .navigation {
+    &__list {
+      display: flex;
+      &--mobile {
+        display: none;
+      }
+    }
+    &__burger {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,123 @@
+.card-task {
+
+  $border-radius: 7px;
+
+  width: 100%;
+  min-width: 250px;
+  border-radius: $border-radius;
+  background: $background-secondary-color;
+  box-shadow: $shadow-basic;
+  will-change: contents;
+  transition: 0.5s box-shadow;
+
+  &:hover {
+    box-shadow: none;
+  }
+
+  &__wrapper-img {
+    position: relative;
+    overflow: hidden;
+    border-top-right-radius: $border-radius;
+    border-top-left-radius: $border-radius;
+    cursor: pointer;
+
+    &:hover {
+      .card-task__img {
+        filter: grayscale(100%);
+      }
+      .card-task__controls {
+        opacity: 1;
+      }
+    }
+
+  }
+
+  &__controls {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.3s all;
+    background: rgba(0, 0, 0, 0.3);
+    border-top-right-radius: $border-radius;
+    border-top-left-radius: $border-radius;
+
+  }
+
+  &__control {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin-left: 15px;
+    margin-right: 15px;
+
+    &:before {
+      @include set-pseudo(100%, 100%, transparent);
+      background-repeat: no-repeat;
+      background-position: center center;
+      transition: 0.3s all;
+    }
+
+    &:hover {
+      &:before {
+        transform: scale(1.1);
+      }
+    }
+
+    &--edit {
+      &:before {
+        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='iso-8859-1'%3F%3E%3C!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0%29 --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve'%3E%3Cpath style='fill:%235DDDD3;' d='M256.001,512C397,512,512,397,512,255.999C512,115,397,0,256.001,0C115,0,0,115,0,255.999 C0,397,115,512,256.001,512z'/%3E%3Cpath style='fill:%23FFFFFF;' d='M117.586,71.673h276.828v311.43l-57.218,57.221h-219.61V71.673z'/%3E%3Cpath style='fill:%23FFCA4F;' d='M337.193,383.106h57.218l-57.218,57.221V383.106z'/%3E%3Cpath style='fill:%23C8CACC;' d='M151.848,112.951h201.797v2.993H151.848V112.951z M151.848,285.505L151.848,285.505h92.327v2.993 h-92.327V285.505z M151.848,269.528L151.848,269.528h201.797v2.993H151.848V269.528z M151.848,249.955L151.848,249.955h201.797 v2.993H151.848V249.955z M151.848,230.385L151.848,230.385h201.797v2.993H151.848V230.385z M151.848,210.812L151.848,210.812 h201.797v2.993H151.848V210.812z M151.848,191.242L151.848,191.242h201.797v2.993H151.848V191.242z M151.848,171.67L151.848,171.67 h201.797v2.993H151.848V171.67z M151.848,152.099L151.848,152.099h201.797v2.993H151.848V152.099z M151.848,132.527L151.848,132.527 h201.797v2.993H151.848V132.527z'/%3E%3Cpath style='fill:%23FFCA4F;' d='M242.616,290.481l-40.247,21.682l18.587,18.589l21.663-40.271H242.616z'/%3E%3Cpath style='fill:%2320D0C2;' d='M207.801,317.602c4.64,0.422,7.399,2.801,7.717,7.714L70.149,470.685l-7.717-7.717L207.801,317.602z' /%3E%3Cpath style='fill:%2315BDB1;' d='M207.801,317.602c0.391-3.714-1.199-5.718-5.435-5.437L56.998,457.534l5.435,5.435L207.801,317.602z' /%3E%3Cpath style='fill:%23ECF0F1;' d='M75.584,476.12l-18.587-18.587l-4.59,4.59l18.587,18.587L75.584,476.12z'/%3E%3Cpath style='fill:%23FFCA4F;' d='M57.221,485.303l-9.403-9.406c-2.526-2.526-2.526-6.657,0-9.18l4.593-4.59l18.587,18.587l-4.59,4.59 c-2.523,2.523-6.655,2.526-9.18,0H57.221z'/%3E%3Cpath style='fill:%23666666;' d='M245.234,288.626l-0.774-0.774l-16.937,10.754l6.93,6.933L245.234,288.626z'/%3E%3Cpath style='fill:%2315BDB1;' d='M215.518,325.316c3.714-0.391,5.718,1.199,5.435,5.437L75.584,476.123l-5.435-5.437L215.518,325.316z '/%3E%3C/svg%3E%0A");
+      }
+    }
+
+    &--delete {
+      &:before {
+        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='iso-8859-1'%3F%3E%3C!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0%29 --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 508 508' style='enable-background:new 0 0 508 508;' xml:space='preserve'%3E%3Ccircle style='fill:%23FF7058;' cx='254' cy='254' r='254'/%3E%3Cpath style='fill:%23324A5E;' d='M218,146l9.2-26h53.6l9.2,26h16.8L294,109.2c-1.2-3.2-4-5.2-7.6-5.2h-64.8c-3.2,0-6.4,2-7.6,5.2 L201.2,146H218z'/%3E%3Cpath style='fill:%23E6E9EE;' d='M316.8,435.2H191.2c-14.8,0-26.8-11.2-28.4-25.6L140.4,174h227.2l-22.4,235.2 C343.6,424,331.6,435.2,316.8,435.2z'/%3E%3Cpath style='fill:%23FFFFFF;' d='M369.6,174H138.4c-9.6,0-17.6-8-17.6-17.6l0,0c0-9.6,8-17.6,17.6-17.6h231.2c9.6,0,17.6,8,17.6,17.6 l0,0C387.2,166.4,379.2,174,369.6,174z'/%3E%3Cg%3E%3Cpath style='fill:%23324A5E;' d='M226,256.4l16.8,7.6c1.6,0.8,3.6,0,4.4-1.6l6.8-12.8l15.2,28l0.8,1.6l-7.2,4c-2.8,1.6-2,5.6,0.8,6.4 l27.2,7.2c2,0.4,4-0.8,4.4-2.4l7.2-27.2c0.8-3.2-2.4-5.6-5.2-4l-5.2,3.2l-23.2-43.2l0,0l0,0l0,0l0,0h-26.4c-1.2,0-2.4,0.8-3.2,2 l-14.4,26.4C223.2,253.2,224,255.6,226,256.4z'/%3E%3Cpath style='fill:%23324A5E;' d='M309.2,299.2c-0.8-1.6-3.2-2.4-4.8-1.2l-15.6,9.2c-1.6,0.8-2.4,3.2-1.2,4.8l6,11.2H268V316 c0-3.2-3.6-4.8-6-2.4l-20,19.6c-1.2,1.2-1.2,3.6,0,4.8l20,20c2.4,2.4,6,0.8,6-2.4v-7.2h37.2c1.2,0,2.4-0.8,3.2-1.6l14-23.2 L309.2,299.2z'/%3E%3Cpath style='fill:%23324A5E;' d='M240.8,297.2l-9.6-26.4c-0.8-2-2.8-2.8-4.4-2l-26.4,9.6c-2.8,1.2-3.2,5.2-0.4,6.4l4.8,2l-18.4,34 c-0.4,1.2-0.4,2.4,0,3.6l14,23.2H230c2,0,3.6-1.6,3.6-3.6v-18c0-2-1.6-3.6-3.6-3.6h-16l13.6-25.6l8.4,4 C239.2,302.8,242,300,240.8,297.2z'/%3E%3C/g%3E%3C/svg%3E%0A");
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 200px;
+    border-top-right-radius: $border-radius;
+    border-top-left-radius: $border-radius;
+    transition: 0.5s all;
+    object-fit: cover;
+  }
+
+  &__header {
+
+  }
+
+  &__time {
+    display: block;
+    margin-top: 15px;
+  }
+
+  &__title {
+    padding: 15px 5px;
+    text-align: center;
+    font-size: 38px;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    padding: 0 15px;
+  }
+
+  &__description {
+    font-size: 30px;
+  }
+
+  &__btn {
+    width: 100%;
+    margin-top: 20px;
+    border-bottom-right-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+}

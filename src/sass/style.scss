@@ -1,0 +1,18 @@
+// global style
+@import "./global/reset";
+@import "./global/mixins";
+// @import "./global/fonts";
+@import "./global/variables";
+@import "./global/global-style";
+
+
+// block style
+@import "./blocks/logo";
+@import "./blocks/label";
+@import "./blocks/input";
+@import "./blocks/btn";
+@import "./blocks/new-task";
+@import "./blocks/card-task";
+@import "./blocks/navigation";
+@import "./blocks/top-bar";
+@import "./blocks/content-block";

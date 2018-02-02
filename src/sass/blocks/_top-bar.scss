@@ -1,0 +1,27 @@
+.top-bar {
+  position: relative;
+  z-index: 10;
+  background: $background-sad-color;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &--fixed {
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    animation: goFixed 0.3s;
+  }
+
+  @keyframes goFixed {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+}
