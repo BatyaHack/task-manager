@@ -43,5 +43,9 @@
     &__card-task {
       width: calc(33% - 30px);
     }
+
+    &__row {
+      margin-right: -25px;
+    }
   }
 }

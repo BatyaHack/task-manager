@@ -8,7 +8,7 @@
   background: $background-secondary-color;
   box-shadow: $shadow-basic;
   will-change: contents;
-  transition: 0.5s all;
+  transition: 0.5s box-shadow;
 
   &:hover {
     box-shadow: none;
