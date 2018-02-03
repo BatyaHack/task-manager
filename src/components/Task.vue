@@ -4,8 +4,10 @@
       <div class="card-task__wrapper-img">
         <img :src="content.img" class="card-task__img" alt="card-task-img">
         <div class="card-task__controls">
-          <a class="card-task__control  card-task__control--edit" href="#"></a>
-          <a @click="removeTask" class="card-task__control  card-task__control--delete" href="#"></a>
+          <router-link :to="{name: 'TaskEdit', params: {taskID: content.id}}"
+                       class="card-task__control  card-task__control--edit">
+          </router-link>
+          <a @click.prevent="removeTask" class="card-task__control  card-task__control--delete" href="#"></a>
         </div>
       </div>
       <h2 class="card-task__title">{{content.title}}</h2>

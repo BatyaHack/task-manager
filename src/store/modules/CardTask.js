@@ -10,6 +10,11 @@ const state = {
 const getters = {
   allTask: function (state) {
     return state.all;
+  },
+  taskID: (state) => (id) => {
+    return state.all.find((elem, index) => {
+      return +elem.id === +id;
+    });
   }
 };
 
@@ -22,9 +27,14 @@ const actions = {
     commit(types.SET_TASK_LIST, {tasks: data});
   },
 
-  addTask ({commit}, task) {
+  addTask({commit}, task) {
     // обращение к API для создания таска
     commit(types.ADD_SOLO_TASK, {task: task}); // выполняем мутацию только при успешном обращении
+  },
+
+  editTask({commit}, task) {
+    // отправляем исправелнный такс на API. Получем в ответ исп таск
+    commit(types.EDIT_TASK, {task: task});
   },
 
   removeTask({commit}, task) {
@@ -43,6 +53,14 @@ const mutations = {
   [types.ADD_SOLO_TASK](state, {task}) {
     task.id = ++state.lastId;
     state.all.push(task);
+  },
+
+  [types.EDIT_TASK](state, {task}) {
+    // TODO найти такс. И потом переписать его
+    let needElem = state.all.find((elem, index) => {
+      return +elem.id === +task.id;
+    });
+    needElem = task;
   },
 
   [types.REMOVE_TASK](state, {id}) {

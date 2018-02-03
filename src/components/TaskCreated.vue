@@ -18,6 +18,10 @@
           required></textarea>
         <span class="label__title">Описание</span>
       </label>
+
+      <img id="img-pic" src="" alt="">
+      <input type="file" id="test-input">
+
       <button @click.prevent="createdTask" class="btn  btn--primary  new-task__btn">Отправить</button>
     </form>
   </div>
@@ -25,53 +29,33 @@
 
 <script>
 
+  import mixinsBasic from './mixins/mixins'
   import {dataFormat} from '@/config'
 
+
   export default {
+    mixins: [mixinsBasic],
     data() {
       return {
         newUser: {
           title: '',
           content: '',
           time: '',
+          img: '',
         },
-        errorFlag: false,
       }
     },
     methods: {
-      // хотя тут нужно сделать как то более универсально. Например через какие-то поля с пользовательскими событиями
-      // жаль что тут нет фильтров как в angular
-      _updateValue: function (evt) {
-        return this.$checkInput(this.newUser.title) && this.$checkInput(this.newUser.content);
-      },
-
-      _errorInput: function () {
-        this.newUser.title = '';
-        this.newUser.content = '';
-        this.errorFlag = true;
-        this.$refs.form.classList.add('errorAnimation');
-        setTimeout(()=> {
-          this.$refs.form.classList.remove('errorAnimation');
-        }, 1000);
-      },
-
       _successInput: function () {
         this.$store.dispatch('addTask', {
           title: this.newUser.title,
           description: this.newUser.content,
+          img: this.newUser.img,
           time: new Date().toLocaleString('ru', dataFormat),
         });
         this.$router.push('/');
       },
-
-      createdTask: function () {
-        if (this._updateValue()) {
-          this._successInput();
-        } else {
-          this._errorInput();
-        }
-      }
-    }
+    },
   }
 </script>
 
@@ -86,11 +70,15 @@
     }
   }
 
+  #test-input {
+    margin-bottom: 20px;
+  }
+
   .errorAnimation {
     animation-name: errorMove;
     animation-duration: 0.5s;
     animation-delay: 0.2s;
-    animation-timing-function: cubic-bezier(.05,.46,.8,.3);
+    animation-timing-function: cubic-bezier(.05, .46, .8, .3);
   }
 
   @keyframes errorMove {
@@ -107,7 +95,7 @@
       transform: translateX(-15px);
     }
     100% {
-      transform: translateX(15px);
+      transform: translateX(0);
     }
 
   }
