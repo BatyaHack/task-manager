@@ -9,8 +9,8 @@ export default {
     };
 
     Vue.prototype.$checkInput = function (value) {
-      let reg = /^[а-яА-ЯёЁa-zA-Z0-9 ]+$/;
-      return String(value).test(reg);
+      let reg = /^[а-яА-ЯёЁa-zA-Z0-9!?.,$ ]+$/;
+      return reg.test(String(value));
     }
   }
 }

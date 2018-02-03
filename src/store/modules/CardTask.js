@@ -13,7 +13,8 @@ const getters = {
   }
 };
 
-
+// тут разные обращения к API
+// Но так как API нет, то делаем вид, что данные приходят и мы их обрабатываем
 const actions = {
   getAllTask({commit, state}) {
     // обращение к API для получения тасков
@@ -31,7 +32,7 @@ const actions = {
   }
 };
 
-
+// тут пришлось генерировать id. Но по идеи id должны приходить с сервера, и тогда мутации станут более тонкими
 const mutations = {
 
   [types.SET_TASK_LIST](state, {tasks}) {
@@ -45,13 +46,11 @@ const mutations = {
   },
 
   [types.REMOVE_TASK](state, {id}) {
-    --state.lastId;
     let deleteElem = state.all.find((elem, index) => {
       return +elem.id === +id;
     });
 
     let deleteIndex = state.all.indexOf(deleteElem);
-    console.log(deleteIndex);
     state.all.splice(deleteIndex, 1);
   }
 };

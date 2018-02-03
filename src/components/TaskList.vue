@@ -15,9 +15,6 @@
     }),
     components: {
       'task': Task,
-    },
-    created: function () {
-      this.$store.dispatch('getAllTask');
     }
   }
 
