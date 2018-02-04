@@ -16,7 +16,7 @@
         <ul class="navigation__list">
           <li class="navigation__elem">
             <router-link :to="{name: 'TaskCreated'}" class="navigation__link">
-              Добавить пользователя
+              Добавить задачу
             </router-link>
           </li>
           <li class="navigation__elem">
@@ -30,7 +30,7 @@
         <ul class="navigation__list  navigation__list--mobile">
           <li class="navigation__elem">
             <router-link :to="{name: 'TaskCreated'}" class="navigation__link">
-              Добавить пользователя
+              Добавить задачу
             </router-link>
           </li>
           <li class="navigation__elem">

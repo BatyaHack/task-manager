@@ -1,0 +1,52 @@
+// тут можно было сделать через z-index для картинки, но нет. Я хочу так
+.img-prev {
+  position: relative;
+
+  &__icon,
+  &__img {
+    display: block;
+    width: 120px;
+    height: 70px;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+
+  &__img[src=""] {
+    display: none;
+  }
+
+  &__img[src=""] + &__icon {
+    background: $background-info-second-color;
+    &:before {
+      display: block;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    object-fit: cover;
+  }
+
+  &__icon {
+    position: relative;
+    background: transparent;
+
+    &:before {
+      $w: 50px;
+      $h: 50px;
+
+      @include set-pseudo($w, $h, transparent);
+      display: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Layer_1' x='0px' y='0px' viewBox='0 0 509.287 509.287' style='enable-background:new 0 0 509.287 509.287;' xml:space='preserve'%3E%3Ccircle style='fill:%23F0582F;' cx='254.644' cy='254.644' r='254.644'/%3E%3Cpath style='fill:%23FCFCFD;' d='M404.514,78.326h-299.74c-14.58,0-26.448,11.868-26.448,26.448v299.74 c0,14.58,11.868,26.448,26.448,26.448h299.74c14.58,0,26.448-11.868,26.448-26.448v-299.74 C430.962,90.193,419.094,78.326,404.514,78.326z'/%3E%3Cpolygon style='fill:%236EB1E1;' points='249.219,263.121 332.97,179.03 398.072,244.132 398.072,107.825 111.216,107.825 111.216,275.666 186.49,200.392 '/%3E%3Cpolygon style='fill:%234F5565;' points='332.97,179.03 249.219,263.121 186.49,200.392 111.216,275.666 111.216,350.601 398.072,350.601 398.072,244.132 '/%3E%3Ccircle style='fill:%23FFFFFC;' cx='252.27' cy='166.485' r='25.091'/%3E%3C/svg%3E");
+      top: calc(50% - #{$h} / 2);
+      left: calc(50% - #{$w} / 2);
+      transition: 0.3s transform;
+    }
+
+    &:hover {
+      &:before {
+        transform: scale(1.2);
+      }
+    }
+  }
+}

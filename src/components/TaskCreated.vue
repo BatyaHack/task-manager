@@ -2,7 +2,10 @@
   <div class="new-task  left-block__new-task">
 
     <p class="info-text  info-text--error" v-if="errorFlag"> Вы ввели корявые символы</p>
-    <p class="info-text" v-else>Достпны только символы 1-9 A-Z A-Я !,.?</p>
+    <div class="info-text" v-else>
+      <p>Достпны только символы 1-9 A-Z A-Я !,.?</p>
+      <p>Картинка обязательна</p>
+    </div>
 
     <form ref="form" class="new-task__form" action="#">
       <label class="label  label--material  new-task__label">
@@ -13,14 +16,19 @@
       </label>
       <label class="label  label--material  new-task__label">
         <textarea
-          v-model="newUser.content"
+          v-model="newUser.description"
           class="input  input--primary  input--textarea  label__input" type="text"
           required></textarea>
         <span class="label__title">Описание</span>
       </label>
 
-      <img id="img-pic" src="" alt="">
-      <input type="file" id="test-input">
+      <div class="img-prev  new-task__img-prev">
+        <label class="img-prev__label">
+          <img class="img-prev__img" id="img-pic" :src="newUser.img">
+          <span class="img-prev__icon"></span>
+          <input type="file" id="test-input" hidden>
+        </label>
+      </div>
 
       <button @click.prevent="createdTask" class="btn  btn--primary  new-task__btn">Отправить</button>
     </form>
@@ -39,7 +47,7 @@
       return {
         newUser: {
           title: '',
-          content: '',
+          description: '',
           time: '',
           img: '',
         },
@@ -49,7 +57,7 @@
       _successInput: function () {
         this.$store.dispatch('addTask', {
           title: this.newUser.title,
-          description: this.newUser.content,
+          description: this.newUser.description,
           img: this.newUser.img,
           time: new Date().toLocaleString('ru', dataFormat),
         });

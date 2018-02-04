@@ -12,9 +12,10 @@ const getters = {
     return state.all;
   },
   taskID: (state) => (id) => {
-    return state.all.find((elem, index) => {
+    let task = state.all.find((elem, index) => {
       return +elem.id === +id;
     });
+    return Object.assign({}, task);
   }
 };
 
@@ -56,11 +57,10 @@ const mutations = {
   },
 
   [types.EDIT_TASK](state, {task}) {
-    // TODO найти такс. И потом переписать его
     let needElem = state.all.find((elem, index) => {
       return +elem.id === +task.id;
     });
-    needElem = task;
+    Object.assign(needElem, task);
   },
 
   [types.REMOVE_TASK](state, {id}) {

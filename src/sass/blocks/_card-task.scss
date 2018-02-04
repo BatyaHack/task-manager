@@ -104,6 +104,7 @@
     text-align: center;
     font-size: 38px;
     text-transform: uppercase;
+    word-wrap: break-word;
   }
 
   &__content {
@@ -112,11 +113,13 @@
 
   &__description {
     font-size: 30px;
+    word-wrap: break-word;
   }
 
   &__btn {
     width: 100%;
     margin-top: 20px;
+    // text-decoration: line-through;
     border-bottom-right-radius: $border-radius;
     border-bottom-left-radius: $border-radius;
   }

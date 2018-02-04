@@ -11,7 +11,7 @@ let mixinBasic = {
 
     _updateValue: function (evt) {
       return this.$checkInput(this.newUser.title) &&
-        this.$checkInput(this.newUser.content) &&
+        this.$checkInput(this.newUser.description) &&
         this.newUser.img !== '';
     },
 
@@ -25,7 +25,7 @@ let mixinBasic = {
 
     _errorInput: function () {
       this.newUser.title = '';
-      this.newUser.content = '';
+      this.newUser.description = '';
       this.errorFlag = true;
       this.$refs.form.classList.add('errorAnimation');
       setTimeout(() => {
