@@ -1,17 +1,15 @@
 function tobBar() {
+
   var burger = document.querySelector('.navigation__burger');
-  var dropMenu = document.querySelector('.navigation__list--mobile');
+  var dropMenu = document.querySelector('.navigation__list');
   var tobBar = document.querySelector('.top-bar');
   var contentBlock = document.querySelector('.content-block__container');
-  var mobileLink = document.querySelector('.navigation__list--mobile');
-
   var headerHeight = tobBar.clientHeight;
   var startedPadding = parseInt(getComputedStyle(contentBlock).paddingTop);
 
-
-  mobileLink.addEventListener('click', function (evt) {
+  dropMenu.addEventListener('click', function (evt) {
     // сделаем делегирование события сразу, а то вдруг меню будет выглядеть как то по другому
-    if(evt.target.classList.contains('navigation__link')) {
+    if (evt.target.classList.contains('navigation__link')) {
       dropMenu.classList.toggle('navigation__list--open');
     }
   });

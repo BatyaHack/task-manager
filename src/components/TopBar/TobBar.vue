@@ -13,6 +13,11 @@
 
       <nav class="navigation  top-bar__navigation">
 
+        <div class="navigation__burger">
+          <span class="navigation__line"></span>
+        </div>
+
+
         <ul class="navigation__list">
           <li class="navigation__elem">
             <router-link :to="{name: 'TaskCreated'}" class="navigation__link">
@@ -26,24 +31,6 @@
             <a class="navigation__link" href="#">Пункт 2</a>
           </li>
         </ul>
-
-        <ul class="navigation__list  navigation__list--mobile">
-          <li class="navigation__elem">
-            <router-link :to="{name: 'TaskCreated'}" class="navigation__link">
-              Добавить задачу
-            </router-link>
-          </li>
-          <li class="navigation__elem">
-            <a class="navigation__link" href="#">Пункт 1</a>
-          </li>
-          <li class="navigation__elem">
-            <a class="navigation__link" href="#">Пункт 2</a>
-          </li>
-        </ul>
-
-        <div class="navigation__burger">
-          <span class="navigation__line"></span>
-        </div>
 
       </nav>
 
